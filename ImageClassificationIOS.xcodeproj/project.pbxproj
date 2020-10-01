@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		24CE95356AAB6568E27D91DF /* Pods_ImageClassificationIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810E2163E1DD030F5A936AFC /* Pods_ImageClassificationIOS.framework */; };
+		7D2F3CC825267DBA003DBF4B /* CameraFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F3CC725267DBA003DBF4B /* CameraFeedManager.swift */; };
+		7D2F3CCA25267E0B003DBF4B /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F3CC925267E0B003DBF4B /* PreviewView.swift */; };
+		7D2F3CCC25267EAE003DBF4B /* CVPixelBufferExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F3CCB25267EAE003DBF4B /* CVPixelBufferExtension.swift */; };
+		7D2F3CD025267F06003DBF4B /* labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7D2F3CCE25267F06003DBF4B /* labels.txt */; };
+		7D2F3CD125267F06003DBF4B /* mobilenet_quant_v1_224.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 7D2F3CCF25267F06003DBF4B /* mobilenet_quant_v1_224.tflite */; };
 		7D4B87742526778C00897BD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B87732526778C00897BD1 /* AppDelegate.swift */; };
 		7D4B87762526778C00897BD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B87752526778C00897BD1 /* SceneDelegate.swift */; };
 		7D4B87782526778C00897BD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B87772526778C00897BD1 /* ViewController.swift */; };
@@ -19,6 +24,11 @@
 /* Begin PBXFileReference section */
 		3AE7FC31073A13957DED857A /* Pods-ImageClassificationIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageClassificationIOS.release.xcconfig"; path = "Target Support Files/Pods-ImageClassificationIOS/Pods-ImageClassificationIOS.release.xcconfig"; sourceTree = "<group>"; };
 		514761B8D207020D8999951E /* Pods-ImageClassificationIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageClassificationIOS.debug.xcconfig"; path = "Target Support Files/Pods-ImageClassificationIOS/Pods-ImageClassificationIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		7D2F3CC725267DBA003DBF4B /* CameraFeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFeedManager.swift; sourceTree = "<group>"; };
+		7D2F3CC925267E0B003DBF4B /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		7D2F3CCB25267EAE003DBF4B /* CVPixelBufferExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPixelBufferExtension.swift; sourceTree = "<group>"; };
+		7D2F3CCE25267F06003DBF4B /* labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = labels.txt; sourceTree = "<group>"; };
+		7D2F3CCF25267F06003DBF4B /* mobilenet_quant_v1_224.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mobilenet_quant_v1_224.tflite; sourceTree = "<group>"; };
 		7D4B87702526778C00897BD1 /* ImageClassificationIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageClassificationIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4B87732526778C00897BD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D4B87752526778C00897BD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +60,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7D2F3CC625267DA4003DBF4B /* Camera Feed */ = {
+			isa = PBXGroup;
+			children = (
+				7D2F3CC725267DBA003DBF4B /* CameraFeedManager.swift */,
+				7D2F3CC925267E0B003DBF4B /* PreviewView.swift */,
+			);
+			path = "Camera Feed";
+			sourceTree = "<group>";
+		};
+		7D2F3CCD25267EDB003DBF4B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7D2F3CCE25267F06003DBF4B /* labels.txt */,
+				7D2F3CCF25267F06003DBF4B /* mobilenet_quant_v1_224.tflite */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		7D4B87672526778C00897BD1 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +104,7 @@
 				7D4B878A25267A5A00897BD1 /* Components */,
 				7D4B878925267A4900897BD1 /* Extensions */,
 				7D4B878825267A2A00897BD1 /* Controllers */,
+				7D2F3CCD25267EDB003DBF4B /* Models */,
 				7D4B877C2526779000897BD1 /* Assets.xcassets */,
 			);
 			path = ImageClassificationIOS;
@@ -103,6 +132,7 @@
 		7D4B878925267A4900897BD1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7D2F3CCB25267EAE003DBF4B /* CVPixelBufferExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -110,6 +140,7 @@
 		7D4B878A25267A5A00897BD1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7D2F3CC625267DA4003DBF4B /* Camera Feed */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -191,8 +222,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D4B87802526779000897BD1 /* LaunchScreen.storyboard in Resources */,
+				7D2F3CD125267F06003DBF4B /* mobilenet_quant_v1_224.tflite in Resources */,
 				7D4B877D2526779000897BD1 /* Assets.xcassets in Resources */,
 				7D4B877B2526778C00897BD1 /* Main.storyboard in Resources */,
+				7D2F3CD025267F06003DBF4B /* labels.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,9 +261,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D2F3CCA25267E0B003DBF4B /* PreviewView.swift in Sources */,
 				7D4B87782526778C00897BD1 /* ViewController.swift in Sources */,
 				7D4B87742526778C00897BD1 /* AppDelegate.swift in Sources */,
+				7D2F3CC825267DBA003DBF4B /* CameraFeedManager.swift in Sources */,
 				7D4B87762526778C00897BD1 /* SceneDelegate.swift in Sources */,
+				7D2F3CCC25267EAE003DBF4B /* CVPixelBufferExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
