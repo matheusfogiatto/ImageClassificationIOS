@@ -9,7 +9,14 @@
 import UIKit
 import AVFoundation
 
+
+
+
+
+
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var previewView: PreviewView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,27 +51,28 @@ extension ViewController: CameraFeedManagerDelegate {
         
         // Updates the UI when session is interupted.
         if resumeManually {
-            self.resumeButton.isHidden = false
+           // Set resume button hidden to false self.resumeButton.isHidden = false
         } else {
-            self.cameraUnavailableLabel.isHidden = false
+            // Set resume button hidden to Hidden
+            //self.cameraUnavailableLabel.isHidden = false
         }
     }
     
     func sessionInterruptionEnded() {
         // Updates UI once session interruption has ended.
-        if !self.cameraUnavailableLabel.isHidden {
-            self.cameraUnavailableLabel.isHidden = true
-        }
-        
-        if !self.resumeButton.isHidden {
-            self.resumeButton.isHidden = true
-        }
+//        if !self.cameraUnavailableLabel.isHidden {
+//            self.cameraUnavailableLabel.isHidden = true
+//        }
+//
+//        if !self.resumeButton.isHidden {
+//            self.resumeButton.isHidden = true
+//        }
     }
     
     func sessionRunTimeErrorOccured() {
         // Handles session run time error by updating the UI and providing a button if session can be manually resumed.
-        self.resumeButton.isHidden = false
-        previewView.shouldUseClipboardImage = true
+//        self.resumeButton.isHidden = false
+//        previewView.shouldUseClipboardImage = true
     }
     
     func presentCameraPermissionsDeniedAlert() {
