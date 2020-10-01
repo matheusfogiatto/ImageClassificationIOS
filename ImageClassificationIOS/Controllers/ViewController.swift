@@ -39,6 +39,13 @@ class ViewController: UIViewController {
         cameraCapture.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        cameraCapture.checkCameraConfigurationAndStartSession()
+      }
+
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         cameraCapture.stopSession()
