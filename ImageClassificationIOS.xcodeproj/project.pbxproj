@@ -13,6 +13,7 @@
 		7D2F3CCC25267EAE003DBF4B /* CVPixelBufferExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F3CCB25267EAE003DBF4B /* CVPixelBufferExtension.swift */; };
 		7D2F3CD025267F06003DBF4B /* labels.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7D2F3CCE25267F06003DBF4B /* labels.txt */; };
 		7D2F3CD125267F06003DBF4B /* mobilenet_quant_v1_224.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 7D2F3CCF25267F06003DBF4B /* mobilenet_quant_v1_224.tflite */; };
+		7D2F3CD4252680B4003DBF4B /* ModelDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2F3CD3252680B4003DBF4B /* ModelDataHandler.swift */; };
 		7D4B87742526778C00897BD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B87732526778C00897BD1 /* AppDelegate.swift */; };
 		7D4B87762526778C00897BD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B87752526778C00897BD1 /* SceneDelegate.swift */; };
 		7D4B87782526778C00897BD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B87772526778C00897BD1 /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 		7D2F3CCB25267EAE003DBF4B /* CVPixelBufferExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPixelBufferExtension.swift; sourceTree = "<group>"; };
 		7D2F3CCE25267F06003DBF4B /* labels.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = labels.txt; sourceTree = "<group>"; };
 		7D2F3CCF25267F06003DBF4B /* mobilenet_quant_v1_224.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = mobilenet_quant_v1_224.tflite; sourceTree = "<group>"; };
+		7D2F3CD3252680B4003DBF4B /* ModelDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDataHandler.swift; sourceTree = "<group>"; };
 		7D4B87702526778C00897BD1 /* ImageClassificationIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageClassificationIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D4B87732526778C00897BD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D4B87752526778C00897BD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 				7D2F3CCF25267F06003DBF4B /* mobilenet_quant_v1_224.tflite */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7D2F3CD22526809F003DBF4B /* ModelDataHandler */ = {
+			isa = PBXGroup;
+			children = (
+				7D2F3CD3252680B4003DBF4B /* ModelDataHandler.swift */,
+			);
+			path = ModelDataHandler;
 			sourceTree = "<group>";
 		};
 		7D4B87672526778C00897BD1 = {
@@ -140,6 +150,7 @@
 		7D4B878A25267A5A00897BD1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7D2F3CD22526809F003DBF4B /* ModelDataHandler */,
 				7D2F3CC625267DA4003DBF4B /* Camera Feed */,
 			);
 			path = Components;
@@ -264,6 +275,7 @@
 				7D2F3CCA25267E0B003DBF4B /* PreviewView.swift in Sources */,
 				7D4B87782526778C00897BD1 /* ViewController.swift in Sources */,
 				7D4B87742526778C00897BD1 /* AppDelegate.swift in Sources */,
+				7D2F3CD4252680B4003DBF4B /* ModelDataHandler.swift in Sources */,
 				7D2F3CC825267DBA003DBF4B /* CameraFeedManager.swift in Sources */,
 				7D4B87762526778C00897BD1 /* SceneDelegate.swift in Sources */,
 				7D2F3CCC25267EAE003DBF4B /* CVPixelBufferExtension.swift in Sources */,
