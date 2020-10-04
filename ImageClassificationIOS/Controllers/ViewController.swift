@@ -12,6 +12,7 @@ import AVFoundation
 class ViewController: UIViewController {
     
     @IBOutlet weak var previewView: PreviewView!
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: Constants
     private let animationDuration = 0.5
@@ -37,6 +38,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         cameraCapture.delegate = self
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,42 +84,21 @@ extension ViewController: CameraFeedManagerDelegate {
         
         // Display results by handing off to the InferenceViewController.
         DispatchQueue.main.async {
-            let resolution = CGSize(width: CVPixelBufferGetWidth(pixelBuffer), height: CVPixelBufferGetHeight(pixelBuffer))
-            print(self.result ?? "")
-            print(resolution)
-            //            self.inferenceViewController?.inferenceResult = self.result
-            //            self.inferenceViewController?.resolution = resolution
-            //            self.inferenceViewController?.tableView.reloadData()
+            self.tableView.reloadData()
         }
     }
     
     // MARK: Session Handling Alerts
     func sessionWasInterrupted(canResumeManually resumeManually: Bool) {
-        
-        // Updates the UI when session is interupted.
-        if resumeManually {
-            // Set resume button hidden to false self.resumeButton.isHidden = false
-        } else {
-            // Set resume button hidden to Hidden
-            //self.cameraUnavailableLabel.isHidden = false
-        }
+
     }
     
     func sessionInterruptionEnded() {
-        // Updates UI once session interruption has ended.
-        //        if !self.cameraUnavailableLabel.isHidden {
-        //            self.cameraUnavailableLabel.isHidden = true
-        //        }
-        //
-        //        if !self.resumeButton.isHidden {
-        //            self.resumeButton.isHidden = true
-        //        }
+
     }
     
     func sessionRunTimeErrorOccured() {
-        // Handles session run time error by updating the UI and providing a button if session can be manually resumed.
-        //        self.resumeButton.isHidden = false
-        //        previewView.shouldUseClipboardImage = true
+
     }
     
     func presentCameraPermissionsDeniedAlert() {
@@ -141,5 +123,63 @@ extension ViewController: CameraFeedManagerDelegate {
         self.present(alert, animated: true)
         previewView.shouldUseClipboardImage = true
     }
+    
+    func displayStringsForResults(atRow row: Int) -> (String, String) {
+
+      var fieldName: String = ""
+      var info: String = ""
+
+      guard let tempResult = result, tempResult.inferences.count > 0 else {
+
+        if row == 1 {
+          fieldName = "No Results"
+          info = ""
+        }
+        else {
+          fieldName = ""
+          info = ""
+        }
+        return (fieldName, info)
+      }
+
+      if row < tempResult.inferences.count {
+        let inference = tempResult.inferences[row]
+        fieldName = inference.label
+        info =  String(format: "%.2f", inference.confidence * 100.0) + "%"
+      }
+      else {
+        fieldName = ""
+        info = ""
+      }
+
+      return (fieldName, info)
+    }
+}
+
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return result?.inferences.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultsTableViewCell") as? ResultsTableViewCell
+        
+        var fieldName = ""
+        var info = ""
+        
+        let tuple = displayStringsForResults(atRow: indexPath.row)
+        fieldName = tuple.0
+        info = tuple.1
+        
+        cell?.nameLabel.text = fieldName
+        cell?.percentLabel.text = info
+        return cell ?? UITableViewCell()
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
 }
 

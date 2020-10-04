@@ -20,6 +20,7 @@
 		7D4B877B2526778C00897BD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B87792526778C00897BD1 /* Main.storyboard */; };
 		7D4B877D2526779000897BD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B877C2526779000897BD1 /* Assets.xcassets */; };
 		7D4B87802526779000897BD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B877E2526779000897BD1 /* LaunchScreen.storyboard */; };
+		7D6CF5642527C7C3006943E6 /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6CF5632527C7C3006943E6 /* ResultsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		7D4B877C2526779000897BD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D4B877F2526779000897BD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D4B87812526779000897BD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D6CF5632527C7C3006943E6 /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
 		810E2163E1DD030F5A936AFC /* Pods_ImageClassificationIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageClassificationIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				7D4B87792526778C00897BD1 /* Main.storyboard */,
+				7D6CF5632527C7C3006943E6 /* ResultsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			files = (
 				7D2F3CCA25267E0B003DBF4B /* PreviewView.swift in Sources */,
 				7D4B87782526778C00897BD1 /* ViewController.swift in Sources */,
+				7D6CF5642527C7C3006943E6 /* ResultsTableViewCell.swift in Sources */,
 				7D4B87742526778C00897BD1 /* AppDelegate.swift in Sources */,
 				7D2F3CD4252680B4003DBF4B /* ModelDataHandler.swift in Sources */,
 				7D2F3CC825267DBA003DBF4B /* CameraFeedManager.swift in Sources */,
